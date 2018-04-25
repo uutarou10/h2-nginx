@@ -1,0 +1,16 @@
+version: '2'
+services:
+  h1.1:
+    build: .
+    volumes:
+      - ./documentRoot:/usr/share/nginx/html
+      - ./config/h1.1:/etc/nginx/conf.d
+    ports:
+      - 1111:443
+  h2:
+    build: .
+    volumes:
+      - ./documentRoot:/usr/share/nginx/html
+      - ./config/h2:/etc/nginx/conf.d
+    ports:
+      - 2222:443
